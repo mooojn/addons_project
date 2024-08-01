@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "TaskLyft",
+    'name': "task_lyft",
 
     'summary': "Freelance Web Platform for Students",
 
     'description': """
-Long description of module's purpose
+        Freelance Platform for UET students 
     """,
 
     'author': "Sheri Moon & Amir",
@@ -18,11 +18,14 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'website'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
+        'views/tasklyft_menuitems.xml',
+        'views/tasklyft_homepage.xml',
+        'views/tasklyft_servicepage.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

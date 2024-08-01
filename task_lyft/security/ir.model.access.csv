@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_./addons_project/task_lyft_./addons_project/task_lyft,./addons_project/task_lyft../addons_project/task_lyft,model_./addons_project/task_lyft_./addons_project/task_lyft,base.group_user,1,1,1,1
+access_tasklyft_service,access_tasklyft_service,model_tasklyft_service,base.group_user,1,1,1,1

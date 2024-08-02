@@ -1,22 +1,41 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import request
 
+class TaskLyft(http.Controller):
 
-# class ./addonsProject/taskLyft(http.Controller):
-#     @http.route('/./addons_project/task_lyft/./addons_project/task_lyft', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+    @http.route(['/services'], type='http', auth='public', website=True)
+    def services_page(self, **kwargs):
+        domain = []
 
-#     @http.route('/./addons_project/task_lyft/./addons_project/task_lyft/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('./addons_project/task_lyft.listing', {
-#             'root': '/./addons_project/task_lyft/./addons_project/task_lyft',
-#             'objects': http.request.env['./addons_project/task_lyft../addons_project/task_lyft'].search([]),
-#         })
+        # Get filter parameters
+        category = kwargs.get('category')
+        title = kwargs.get('title')
+        experience_level = kwargs.get('experience_level')
+        price_range = kwargs.get('price_range')
 
-#     @http.route('/./addons_project/task_lyft/./addons_project/task_lyft/objects/<model("./addons_project/task_lyft../addons_project/task_lyft"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('./addons_project/task_lyft.object', {
-#             'object': obj
-#         })
+        # Apply category filter
+        if category:
+            domain.append(('category', '=', category))
 
+        # Apply title filter
+        if title:
+            domain.append(('title', 'ilike', title))
+
+        # Apply experience level filter
+        if experience_level:
+            domain.append(('experience_level', '=', experience_level))
+
+        # Apply price range filter
+        if price_range:
+            price_min, price_max = price_range.split('-')
+            if price_min:
+                domain.append(('price_per_hour', '>=', float(price_min)))
+            if price_max:
+                domain.append(('price_per_hour', '<=', float(price_max)))
+
+        # Fetch filtered services
+        services = request.env['tasklyft.service'].sudo().search(domain)
+
+        return request.render('task_lyft.services_page', {
+            'services': services
+        })

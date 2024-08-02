@@ -1,5 +1,33 @@
 from odoo import http
 from odoo.http import request
+import base64
+class TasklyftController(http.Controller):
+
+    @http.route('/create_gig', type='http', auth='user', website=True, csrf=True)
+    def create_gig(self, **kwargs):
+        if request.httprequest.method == 'POST':
+            title = kwargs.get('title')
+            category = kwargs.get('category')
+            experience_level = kwargs.get('experience_level')
+            price_per_hour = kwargs.get('price_per_hour')
+            
+            picture_file = kwargs.get('picture')
+            
+            
+            picture = base64.b64encode(picture_file.read()) if picture_file else None
+
+            
+            request.env['tasklyft.service'].sudo().create({
+                'title': title,
+                'category': category,
+                'experience_level': experience_level,
+                'price_per_hour': price_per_hour,
+                'picture': picture,
+                'user_id': request.env.user.partner_id.id,
+            })
+            
+
+        return request.render('task_lyft.gig_page')
 
 class TaskLyft(http.Controller):
 

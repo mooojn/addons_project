@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "task_lyft",
+    'name': "Task Lyft",
 
     'summary': "Freelance Web Platform for Students",
 
@@ -34,5 +34,6 @@
     'demo': [
         'demo/demo.xml',
     ],
+
 }
 

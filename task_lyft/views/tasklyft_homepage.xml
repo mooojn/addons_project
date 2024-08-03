@@ -3,7 +3,7 @@
     
     <template id="tasklyft_homepage" inherit_id="website.homepage">
         <xpath expr="//div[@id='wrap']" position="inside">
-           <link rel="stylesheet" type="text/css" href="/task_lyft/static/src/css/main.css"/>
+           <link rel="stylesheet" type="text/css" href="/task_lyft/static/src/css/mainsss.css"/>
     
                 <div class="main">
                     <!-- Hero Section -->

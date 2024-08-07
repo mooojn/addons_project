@@ -23,11 +23,11 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/tasklyft_homepage.xml',
-        'views/tasklyft_servicepage.xml',
-        'views/tasklyft_gigpage.xml',
-        'views/tasklyft_nav.xml',
-        'views/tasklyft_footer.xml',
+        # 'views/tasklyft_homepage.xml',
+        # 'views/tasklyft_servicepage.xml',
+        # 'views/tasklyft_gigpage.xml',
+        # 'views/tasklyft_nav.xml',
+        # 'views/tasklyft_footer.xml',
         'views/tasklyft_signup.xml',
         'views/tasklyft_menuitems.xml',
     ],

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- <record id="view_gig_request_details_tree" model="ir.ui.view">
+    <record id="view_gig_request_details_tree" model="ir.ui.view">
         <field name="name">Gig Request Details Tree View</field>
         <field name="model">tasklyft.gigrequest</field>
         <field name="arch" type="xml">
@@ -19,6 +19,9 @@
         </field>
     </record>
     
+    
+        
+    
     <record id="action_gig_request_form" model="ir.actions.act_window">
         <field name="name">Gig Request Details</field>
         <field name="res_model">tasklyft.gigrequest</field>
@@ -28,7 +31,10 @@
         <field name="domain">[('id', '=', active_id)]</field>
     </record>
     
-    <record id="task_lyft_gig_tree" model="ir.ui.view">
+    
+    
+    
+        <record id="task_lyft_gig_tree" model="ir.ui.view">
         <field name="name">Gig Requests Tree View</field>
         <field name="model">tasklyft.gigrequest</field>
         <field name="arch" type="xml">
@@ -47,19 +53,10 @@
         <field name="view_mode">tree</field>
             <field name="domain">[('status', '=', 'submitted')]</field>
         <field name="view_id" ref="task_lyft.task_lyft_gig_tree"></field>
-    </record> -->
+    </record>
     <!-- Root menu item with application attribute -->
     <menuitem id="task_lyft_root_menu" name="TaskLyft"/>
 
     <!-- Child menu item -->
-    <!-- <menuitem id="task_lyft_request_menu" name="Gig Requests" parent="task_lyft_root_menu" action="task_lyft_action_request"/> -->
-    
-    <record id='task_lyft_action_request1' model='ir.actions.act_window'>
-        <field name="name">Services</field>
-        <field name="res_model">tasklyft.service</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="task_lyft_request_menu" name="Services" parent="task_lyft_root_menu" action="task_lyft_action_request1"/>
-
+    <menuitem id="task_lyft_request_menu" name="Gig Requests" parent="task_lyft_root_menu" action="task_lyft_action_request"/>
 </odoo>

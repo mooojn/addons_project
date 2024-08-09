@@ -30,6 +30,7 @@
         'views/tasklyft_footer.xml',
         'views/tasklyft_signup.xml',
         'views/tasklyft_servicerequest.xml',
+        # 'views/tasklyft_msg.xml',
         'views/tasklyft_menuitems.xml',
     ],
     # only loaded in demonstration mode

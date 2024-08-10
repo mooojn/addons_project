@@ -40,15 +40,11 @@ class TasklyftController(http.Controller):
                 'picture': picture,
                 'user_id': user_id,
             })
+            
+        # Render the service creation page after service is created
+        return request.redirect('services')
 
-            # Return JSON response for successful creation
-            return request.make_response(
-                json.dumps({'success': 'Service created successfully!'}),
-                headers={'Content-Type': 'application/json'}
-            )
-        
-        # Render the service creation page
-        return request.render('task_lyft.create_service_page')
+
 class TaskLyft(http.Controller):
 
     @http.route(['/services'], type='http', auth='public', website=True)

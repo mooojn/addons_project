@@ -31,7 +31,7 @@ class TasklyftController(http.Controller):
             picture = base64.b64encode(picture_file.read()) if picture_file else None
             
             # Create the service
-            request.env['tasklyft.service'].sudo().create({
+            request.env['tasklyft.service_request'].sudo().create({
                 'title': title,
                 'category': category,
                 'experience_level': experience_level,
@@ -39,6 +39,7 @@ class TasklyftController(http.Controller):
                 'price_per_month': price_per_month,
                 'picture': picture,
                 'user_id': user_id,
+                'status':'submitted'
             })
             
         # Render the service creation page after service is created

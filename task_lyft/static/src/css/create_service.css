@@ -47,3 +47,18 @@
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+.progress-bar {
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: width 0.1s linear;
+}
+#progress-bar.success {
+    background-color: #00FFFF; 
+}
+
+#progress-bar.error {
+    background-color: red; 
+}

@@ -28,15 +28,16 @@ document.querySelectorAll('#myDropdown a').forEach(function(item) {
     });
 });
 
-function toggleMap() {
-    var mapContainer = document.getElementById("mapContainer");
-    var viewMapBtn = document.getElementById("viewMapBtn");
+// function toggleMap() {
+//     var mapContainer = document.getElementById("mapContainer");
+//     var viewMapBtn = document.getElementById("viewMapBtn");
 
-    if (mapContainer.style.display === "none") {
-        mapContainer.style.display = "block";
-        viewMapBtn.style.display = "none";
-    } else {
-        mapContainer.style.display = "none";
-        viewMapBtn.style.display = "inline-block";
-    }
-}
+//     if (mapContainer.style.display === "none") {
+//         mapContainer.style.display = "block";
+//         viewMapBtn.style.display = "none";
+//     } else {
+//         mapContainer.style.display = "none";
+//         viewMapBtn.style.display = "inline-block";
+//     }
+// }
+

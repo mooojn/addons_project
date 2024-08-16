@@ -32,11 +32,13 @@
         'views/tasklyft_servicerequest.xml',
         'views/tasklyft_contactus.xml',
         'views/tasklyft_menuitems.xml',
+        'data/website_settings_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    
 
 }
 

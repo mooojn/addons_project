@@ -55,11 +55,30 @@
             </div>
         </xpath>
     </template>
-    <template id="tasklyft_signup5" inherit_id="auth_signup.signup">
+    <template id="tasklyft_signup_btn" inherit_id="auth_signup.signup">
         <xpath expr="//button[@class='btn btn-primary']" position="replace">
             <button type="submit" class="btn btn-primary" style="background-color: #00bcd4; border: 2px solid #00bcd4; color: #fff; padding: 5px 20px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-size: 16px; cursor: pointer;"
             onmouseover="this.style.backgroundColor='#0097a7'; this.style.borderColor='#0097a7';"
             onmouseout="this.style.backgroundColor='#00bcd4'; this.style.borderColor='#00bcd4';"> Sign up</button>
+        </xpath>
+    </template>
+
+    <template id="tasklyft_resetPass" inherit_id="auth_signup.reset_password">
+        <xpath expr="//div[@class='mb-3 field-login']" position="replace">
+            <div class="mb-3 field-login">
+                <label for="login" class="col-form-label">Your Email</label>
+                <input type="text" name="login" t-att-value="login" id="login" class="form-control"
+                    autofocus="autofocus" required="required" autocapitalize="off" style="border: 2px solid #ccc; padding: 5px; border-radius: 5px; box-shadow: none;"
+                    onfocus="this.style.borderColor='#00bcd4'; this.style.boxShadow='0 0 5px rgba(0, 188, 212, 0.5)';"
+                    onblur="if (!this.value) {this.style.borderColor='#ccc'; this.style.boxShadow='none';} else {this.style.borderColor='#00bcd4'; this.style.boxShadow='0 0 5px rgba(0, 188, 212, 0.5)';}"/>
+
+            </div>
+        </xpath>
+
+        <xpath expr="//button[@class='btn btn-primary']" position="replace">
+            <button type="submit" class="btn btn-primary" style="background-color: #00bcd4; border: 2px solid #00bcd4; color: #fff; padding: 5px 20px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-size: 16px; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='#0097a7'; this.style.borderColor='#0097a7';"
+            onmouseout="this.style.backgroundColor='#00bcd4'; this.style.borderColor='#00bcd4';">Reset Password</button>
         </xpath>
     </template>
 </odoo>

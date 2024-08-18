@@ -100,26 +100,26 @@ class tasklyft_service_request(models.Model):
             })
             record.status = 'accepted'
 
-        # return {
-        #     'type': 'ir.actions.act_window',
-        #     'name': 'Service Request Details',
-        #     'res_model': 'tasklyft.service_request',
-        #     'view_mode': 'tree',
-        #     'view_id': self.env.ref('tasklyft.view_service_request_details_tree').id,
-        #     'target': 'current',
-        #     'domain': [('id', '=', record.id)],
-        # }
+        return {
+        'type': 'ir.actions.act_window',
+        'name': 'Service Requests',
+        'res_model': 'tasklyft.service_request',
+        'view_mode': 'tree',
+        'view_id': self.env.ref('task_lyft.task_lyft_service_tree').id,
+        'domain': [('status', '=', 'submitted')],
+        'target': 'current',
+        }
 
     def action_reject_request(self):
         for record in self:
             record.status = 'rejected'
 
-        # return {
-        #     'type': 'ir.actions.act_window',
-        #     'name': 'Service Request Details',
-        #     'res_model': 'tasklyft.service_request',
-        #     'view_mode': 'tree',
-        #     'view_id': self.env.ref('tasklyft.view_service_request_details_tree').id,
-        #     'target': 'current',
-        #     'domain': [('id', '=', record.id)],
-        # }   
+        return {
+        'type': 'ir.actions.act_window',
+        'name': 'Service Requests',
+        'res_model': 'tasklyft.service_request',
+        'view_mode': 'tree',
+        'view_id': self.env.ref('task_lyft.task_lyft_service_tree').id,
+        'domain': [('status', '=', 'submitted')],
+        'target': 'current',
+        } 

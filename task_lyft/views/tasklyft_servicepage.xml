@@ -78,7 +78,7 @@
                         </form>
                         <!-- Services Grid and Modal -->
                         <div class="row d-flex align-items-stretch">
-                            <h1 class="text-center" style="margin-bottom:15px;">Services</h1>
+                            <h1 class="text-center" style="margin-bottom:25px;">Services</h1>
                             <t t-if="services">
                                 <t t-foreach="services" t-as="service">
                                     <div style="width: 340px;" class="s_col_no_bgcolor pb16">

@@ -1,4 +1,7 @@
 from odoo import fields, models
+from odoo import http
+from odoo.http import request
+
 
 class tasklyft_service_request(models.Model):
     _name = 'tasklyft.service_request'
@@ -95,15 +98,28 @@ class tasklyft_service_request(models.Model):
                 'price_per_month': record.price_per_month,
                 'user_id': record.user_id.id,
             })
-            # Add logic to handle rejection
             record.status = 'accepted'
-        
-        # redirect('../')
 
+        # return {
+        #     'type': 'ir.actions.act_window',
+        #     'name': 'Service Request Details',
+        #     'res_model': 'tasklyft.service_request',
+        #     'view_mode': 'tree',
+        #     'view_id': self.env.ref('tasklyft.view_service_request_details_tree').id,
+        #     'target': 'current',
+        #     'domain': [('id', '=', record.id)],
+        # }
 
-
-    
     def action_reject_request(self):
         for record in self:
-            # Add logic to handle rejection
             record.status = 'rejected'
+
+        # return {
+        #     'type': 'ir.actions.act_window',
+        #     'name': 'Service Request Details',
+        #     'res_model': 'tasklyft.service_request',
+        #     'view_mode': 'tree',
+        #     'view_id': self.env.ref('tasklyft.view_service_request_details_tree').id,
+        #     'target': 'current',
+        #     'domain': [('id', '=', record.id)],
+        # }   
